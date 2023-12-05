@@ -6,10 +6,16 @@ const UniqueTask = ({ task, onToggleComplete, onDelete }) => {
     <div className="task">
       <input
         type="checkbox"
+        id={`task-${task.id}`}
         checked={task.complete}
         onChange={() => onToggleComplete(task.id)}
       />
-      <span className={task.complete ? "completed" : ""}>{task.text}</span>
+      <label
+        htmlFor={`task-${task.id}`}
+        className={task.complete ? "completed" : ""}
+      >
+        {task.text}
+      </label>
       <button onClick={() => onDelete(task.id)}>Delete</button>
     </div>
   );

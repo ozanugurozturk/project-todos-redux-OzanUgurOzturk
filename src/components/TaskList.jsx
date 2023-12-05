@@ -19,10 +19,14 @@ export const TaskList = () => {
   const totalTasks = tasksList.length;
   const uncompletedTasks = tasksList.filter((task) => !task.complete).length;
 
+  console.log(tasksList);
+
   return (
     <div className="task-list">
-      <div className="task-count">
-        Total Tasks: {totalTasks} | Uncompleted Tasks: {uncompletedTasks}
+      <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel"
+      >
+        <div id="totalTasksLabel">Total Tasks: {totalTasks}</div>
+        <div id="uncompletedTasksLabel">Uncompleted Tasks: {uncompletedTasks}</div>
       </div>
       {tasksList.map((task) => (
         <UniqueTask

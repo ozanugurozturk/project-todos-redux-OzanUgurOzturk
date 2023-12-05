@@ -20,6 +20,7 @@ export const AddTaskForm = () => {
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
         placeholder="Add a new task"
+        aria-label="Add a new task"
       />
       <button onClick={handleAddTask}>Add Task</button>
     </div>
