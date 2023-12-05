@@ -5,7 +5,7 @@ import UniqueTask from "./UniqueTask";
 import "../style/TaskList.css";
 
 export const TaskList = () => {
-  const tasks = useSelector((state) => state.tasks);
+  const tasksList = useSelector((state) => state.tasks.tasksList);
   const dispatch = useDispatch();
 
   const handleToggleComplete = (taskId) => {
@@ -15,15 +15,16 @@ export const TaskList = () => {
   const handleDelete = (taskId) => {
     dispatch(deleteTask(taskId));
   };
-  const totalTasks = tasks.length;
-  const uncompletedTasks = tasks.filter((task) => !task.complete).length;
+
+  const totalTasks = tasksList.length;
+  const uncompletedTasks = tasksList.filter((task) => !task.complete).length;
 
   return (
     <div className="task-list">
       <div className="task-count">
         Total Tasks: {totalTasks} | Uncompleted Tasks: {uncompletedTasks}
       </div>
-      {tasks.map((task) => (
+      {tasksList.map((task) => (
         <UniqueTask
           key={task.id}
           task={task}
