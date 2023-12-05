@@ -6,7 +6,7 @@ import "../style/ToDoApp.css";
 const TodoApp = () => {
   return (
     <div className="todo-app">
-      <h1>ToDo App</h1>
+      <h1 className="app-name">To Do List</h1>
       <AddTaskForm />
       <TaskList />
     </div>

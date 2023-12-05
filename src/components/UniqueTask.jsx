@@ -1,22 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../style/UniqueTask.css";
 
 const UniqueTask = ({ task, onToggleComplete, onDelete }) => {
   return (
     <div className="task">
-      <input
-        type="checkbox"
-        id={`task-${task.id}`}
-        checked={task.complete}
-        onChange={() => onToggleComplete(task.id)}
-      />
-      <label
-        htmlFor={`task-${task.id}`}
-        className={task.complete ? "completed" : ""}
-      >
-        {task.text}
-      </label>
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      <div className="checkbox-label-wrapper">
+        <input
+          type="checkbox"
+          id={`task-${task.id}`}
+          checked={task.complete}
+          onChange={() => onToggleComplete(task.id)}
+        />
+        <label
+          htmlFor={`task-${task.id}`}
+          className={task.complete ? "completed" : ""}
+        >
+          {task.text}
+        </label>
+      </div>
+      <button type="button" onClick={() => onDelete(task.id)}>Delete</button>
     </div>
   );
 };

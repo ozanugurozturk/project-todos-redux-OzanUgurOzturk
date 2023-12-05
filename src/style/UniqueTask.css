@@ -1,0 +1,93 @@
+[type="checkbox"] {
+  opacity: 0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: #666;
+  line-height: 20px;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: #fff;
+  border-radius: 2px;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #5fd25f;
+  background: #fff;
+  border-radius: 2px;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(/CheckImage.png);
+  background-size: cover;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  border-radius: 2px;
+}
+
+[type="checkbox"]:not(:checked) + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(/CheckImage.png);
+  background-size: cover;
+  transform: scale(0);
+  opacity: 0;
+  border-radius: 2px;
+}
+
+.completed {
+  background-image: url(/LineImage.png);
+  background-size: contain;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 11px;
+}
+
+.task button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #EE7214;
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+}
+
+.task button:hover {
+  background-color: #b0520a;
+}

@@ -23,10 +23,9 @@ export const TaskList = () => {
 
   return (
     <div className="task-list">
-      <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel"
-      >
+      <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel">
         <div id="totalTasksLabel">Total Tasks: {totalTasks}</div>
-        <div id="uncompletedTasksLabel">Uncompleted Tasks: {uncompletedTasks}</div>
+        <div id="uncompletedTasksLabel">Incomplete Tasks: {uncompletedTasks}</div>
       </div>
       {tasksList.map((task) => (
         <UniqueTask

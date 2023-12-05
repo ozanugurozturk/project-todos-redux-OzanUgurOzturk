@@ -19,10 +19,10 @@ export const AddTaskForm = () => {
         type="text"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
-        placeholder="Add a new task"
-        aria-label="Add a new task"
+        placeholder="Write your new task to add"
+        aria-label="Write your new task to add"
       />
-      <button onClick={handleAddTask}>Add Task</button>
+      <button type="button" onClick={handleAddTask}>Add Task</button>
     </div>
   );
 };
