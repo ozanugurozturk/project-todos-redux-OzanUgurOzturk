@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 export const tasks = createSlice({
   name: "tasks",
   initialState: [
-    { id: 1, text: "Watch video on actions & reducers", complete: true },
-    { id: 2, text: "Follow redux codealong", complete: true },
-    { id: 3, text: "Fork weekly assignment", complete: true },
+    { id: 1, text: "Watch video on actions & reducers", complete: false },
+    { id: 2, text: "Follow redux codealong", complete: false },
+    { id: 3, text: "Fork weekly assignment", complete: false },
     { id: 4, text: "Create a todo app", complete: false },
   ],
   reducers: {
@@ -13,7 +13,7 @@ export const tasks = createSlice({
       state.push({
         id: state.length + 1,
         text: action.payload.text,
-        complete: false,
+        complete: false, // Setting the initial current state to false when a task is added
       });
     },
     toggleComplete: (state, action) => {
