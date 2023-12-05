@@ -1,18 +1,22 @@
-import React from 'react';
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { tasks } from './reducers/tasks'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { tasks } from "./reducers/tasks";
+import TodoApp from "./components/ToDoApp";
+import "./App.css"; // Import your styling
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
-})
+  tasks: tasks.reducer,
+});
 
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
 
-export const App = () => {
+const App = () => {
   return (
     <Provider store={store}>
-      Your components can be mounted here, inside the Provider.
+      <TodoApp />
     </Provider>
-  )
-}
+  );
+};
+
+export default App;

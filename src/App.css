@@ -1,0 +1,19 @@
+.app {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.add-task-form {
+  margin-top: 20px;
+}
