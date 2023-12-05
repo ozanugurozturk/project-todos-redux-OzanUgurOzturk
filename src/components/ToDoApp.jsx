@@ -1,6 +1,7 @@
 import React from "react";
 import { TaskList } from "./TaskList";
 import { AddTaskForm } from "./AddTaskForm";
+import "../style/ToDoApp.css";
 
 const TodoApp = () => {
   return (
