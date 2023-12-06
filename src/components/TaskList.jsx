@@ -1,6 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleComplete, deleteTask } from "../reducers/tasks";
+import {
+  toggleComplete,
+  deleteTask,
+  completeAllTasks,
+} from "../reducers/tasks";
 import UniqueTask from "./UniqueTask";
 import "../style/TaskList.css";
 
@@ -19,13 +23,22 @@ export const TaskList = () => {
   const totalTasks = tasksList.length;
   const uncompletedTasks = tasksList.filter((task) => !task.complete).length;
 
+  const handleCompleteAll = () => {
+    dispatch(completeAllTasks());
+  };
+
   console.log(tasksList);
 
   return (
     <div className="task-list">
-      <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel">
+      <div
+        className="task-count"
+        aria-labelledby="totalTasksLabel uncompletedTasksLabel"
+      >
         <div id="totalTasksLabel">Total Tasks: {totalTasks}</div>
-        <div id="uncompletedTasksLabel">Incomplete Tasks: {uncompletedTasks}</div>
+        <div id="uncompletedTasksLabel">
+          Incomplete Tasks: {uncompletedTasks}
+        </div>
       </div>
       {tasksList.map((task) => (
         <UniqueTask
@@ -35,6 +48,9 @@ export const TaskList = () => {
           onDelete={handleDelete}
         />
       ))}
+      <button type="button" onClick={handleCompleteAll}>
+        Complete All
+      </button>
     </div>
   );
 };

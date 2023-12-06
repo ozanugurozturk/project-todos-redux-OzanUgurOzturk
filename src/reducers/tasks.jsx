@@ -39,9 +39,14 @@ export const tasks = createSlice({
       const taskId = action.payload;
       state.tasksList = state.tasksList.filter((task) => task.id !== taskId);
     },
+    completeAllTasks: (state) => {
+      state.tasksList.forEach((task) => {
+        task.complete = true;
+      });
+    },
   },
 });
 
-export const { addTask, toggleComplete, deleteTask } = tasks.actions;
+export const { addTask, toggleComplete, deleteTask, completeAllTasks } = tasks.actions;
 
 export default tasks;
