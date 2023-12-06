@@ -40,14 +40,22 @@ export const TaskList = () => {
           Incomplete Tasks: {uncompletedTasks}
         </div>
       </div>
-      {tasksList.map((task) => (
-        <UniqueTask
-          key={task.id}
-          task={task}
-          onToggleComplete={handleToggleComplete}
-          onDelete={handleDelete}
-        />
-      ))}
+
+      {tasksList.length === 0 ? (
+        <div className="empty-state-message">
+          No tasks yet. Add a task to get started!
+        </div>
+      ) : (
+        tasksList.map((task) => (
+          <UniqueTask
+            key={task.id}
+            task={task}
+            onToggleComplete={handleToggleComplete}
+            onDelete={handleDelete}
+          />
+        ))
+      )}
+
       <button type="button" onClick={handleCompleteAll}>
         Complete All
       </button>
