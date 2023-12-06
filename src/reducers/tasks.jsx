@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { format } from "date-fns";
 
 export const tasks = createSlice({
   name: "tasks",
@@ -17,10 +18,13 @@ export const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       const newId = state.latestId + 1;
+      const timestamp = new Date();
+      const formattedTimestamp = format(timestamp, "yyyy-MM-dd HH:mm:ss");
       state.tasksList.push({
         id: newId,
         text: action.payload.text,
         complete: false,
+        timestamp: formattedTimestamp,
       });
       state.latestId = newId;
     },

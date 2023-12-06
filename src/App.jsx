@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { tasks } from "./reducers/tasks";
 import TodoApp from "./components/ToDoApp";
-import "./App.css"; // Import your styling
+import "./App.css";
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
