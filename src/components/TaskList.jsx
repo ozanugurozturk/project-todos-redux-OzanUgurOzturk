@@ -42,8 +42,14 @@ export const TaskList = () => {
       </div>
 
       {tasksList.length === 0 ? (
-        <div className="empty-state-message">
-          No tasks yet. Add a task to get started!
+        <div className="empty-state-container">
+          <img
+            src="../../public/ChecklistCompleted.svg"
+            alt="Empty State Illustration"
+          />
+          <div className="empty-state-message">
+            No tasks yet. Add a task to get started!
+          </div>
         </div>
       ) : (
         tasksList.map((task) => (

@@ -1,5 +1,8 @@
 .task-list {
   margin-top: 20px;
+  background-color: #F7B787;
+  border-radius: 11px;
+  padding: 5px;
 }
 
 .task-count {
@@ -8,17 +11,29 @@
   justify-content: space-between;
   font-size: 16px;
   font-weight: bold;
+  margin-top: 10px;
   margin-bottom: 10px;
-  background-color: #F7B787;
+  background-color:#ee7214;
   color: #fff;
   padding: 15px;
   border-radius: 11px;
 }
 
+.empty-state-container {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 11px;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+}
+
 .empty-state-message {
   font-size: 18px;
-  color: #fff;
-  margin: 20px;
+  color: #13123b;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 /* For screens smaller than 768px */

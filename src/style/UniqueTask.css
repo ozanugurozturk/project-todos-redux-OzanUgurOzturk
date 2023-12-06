@@ -96,14 +96,14 @@
 .task button {
   padding: 8px;
   cursor: pointer;
-  background-color: #ee7214;
+  background-color: rgb(163, 28, 28);
   color: #fff;
   border: none;
   border-radius: 11px;
 }
 
 .task button:hover {
-  background-color: #b0520a;
+  background-color: rgb(62, 14, 14);
 }
 
 .task-details {
