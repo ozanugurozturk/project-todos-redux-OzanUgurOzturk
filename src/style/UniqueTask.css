@@ -1,5 +1,5 @@
 .checkbox-label-wrapper {
-  width: 50%;
+  width: 65%;
   display: flex;
   align-items: center;
 }
@@ -7,6 +7,7 @@
 .checkbox-label-wrapper label {
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-align: left;
   max-width: 100%;
 }
 
@@ -118,4 +119,23 @@
   margin-right: 10px;
   display: flex;
   flex-direction: column;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .checkbox-label-wrapper {
+    transform: translateX(-4%);
+    width: 60%;
+  }
+}
+
+/* For screens smaller than 450px */
+@media (max-width: 450px) {
+  .checkbox-label-wrapper {
+    transform: translateX(-10%);
+    width: 55%;
+  }
+  .timestamp {
+    font-size: 7px;
+  }
 }

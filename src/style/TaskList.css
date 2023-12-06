@@ -14,3 +14,17 @@
   padding: 15px;
   border-radius: 11px;
 }
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .task-count {
+    font-size: 15px;
+  }
+}
+
+/* For screens smaller than 450px */
+@media (max-width: 450px) {
+  .task-count {
+    font-size: 14px;
+  }
+}
