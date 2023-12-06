@@ -23,8 +23,6 @@ export const TaskList = () => {
     dispatch(completeAllTasks());
   };
 
-  console.log(tasksList);
-
   return (
     <div className="task-list">
       <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel">
@@ -34,7 +32,7 @@ export const TaskList = () => {
 
       {tasksList.length === 0 ? (
         <div className="empty-state-container">
-          <img src="../../public/ChecklistCompleted.svg" alt="Empty State Illustration"/>
+          <img src="/ChecklistCompleted.svg" alt="Empty State Illustration"/>
           <div className="empty-state-message">No tasks yet. Add a task to get started!</div>
         </div>
       ) : (
