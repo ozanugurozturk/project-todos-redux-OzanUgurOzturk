@@ -39,9 +39,7 @@ export const AddTaskForm = () => {
           {maxCharacters - newTask.length}
         </div>
       </div>
-      <button type="button" onClick={handleAddTask}>
-        Add Task
-      </button>
+      <button type="button" onClick={handleAddTask}>Add Task</button>
     </div>
   );
 };

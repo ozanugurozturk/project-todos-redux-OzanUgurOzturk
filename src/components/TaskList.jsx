@@ -1,10 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  toggleComplete,
-  deleteTask,
-  completeAllTasks,
-} from "../reducers/tasks";
+import { toggleComplete, deleteTask, completeAllTasks } from "../reducers/tasks";
 import UniqueTask from "./UniqueTask";
 import "../style/TaskList.css";
 
@@ -31,25 +27,15 @@ export const TaskList = () => {
 
   return (
     <div className="task-list">
-      <div
-        className="task-count"
-        aria-labelledby="totalTasksLabel uncompletedTasksLabel"
-      >
+      <div className="task-count" aria-labelledby="totalTasksLabel uncompletedTasksLabel">
         <div id="totalTasksLabel">Total Tasks: {totalTasks}</div>
-        <div id="uncompletedTasksLabel">
-          Incomplete Tasks: {uncompletedTasks}
-        </div>
+        <div id="uncompletedTasksLabel">Incomplete Tasks: {uncompletedTasks}</div>
       </div>
 
       {tasksList.length === 0 ? (
         <div className="empty-state-container">
-          <img
-            src="../../public/ChecklistCompleted.svg"
-            alt="Empty State Illustration"
-          />
-          <div className="empty-state-message">
-            No tasks yet. Add a task to get started!
-          </div>
+          <img src="../../public/ChecklistCompleted.svg" alt="Empty State Illustration"/>
+          <div className="empty-state-message">No tasks yet. Add a task to get started!</div>
         </div>
       ) : (
         tasksList.map((task) => (
@@ -62,9 +48,9 @@ export const TaskList = () => {
         ))
       )}
 
-      <button type="button" onClick={handleCompleteAll}>
-        Complete All
-      </button>
+      {uncompletedTasks > 0 && (
+        <button type="button" onClick={handleCompleteAll}>Complete All</button>
+      )}
     </div>
   );
 };

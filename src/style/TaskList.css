@@ -36,6 +36,11 @@
   z-index: 2;
 }
 
+.empty-state-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
   .task-count {

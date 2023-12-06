@@ -29,9 +29,7 @@ const UniqueTask = ({ task, onToggleComplete, onDelete }) => {
             </>
           )}
         </div>
-        <button type="button" onClick={() => onDelete(task.id)}>
-          Delete
-        </button>
+        <button type="button" onClick={() => onDelete(task.id)}>Delete</button>
       </div>
     </div>
   );
